@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/inventory-service
+    username: root
+    password: password
+  jpa:
+    hibernate:
+#      THIS IS ONLY USED BECAUSE THIS IS TEST CODE
+#      This is done to reduce redundant data insertion from CommandLineRunner
+#      Migration is an entirely different thing that should be handled by itself
+      ddl-auto: create-drop
+#      ddl-auto: update
+server:
+  #  8082 because product-service is running on 8080
+  port: 8082

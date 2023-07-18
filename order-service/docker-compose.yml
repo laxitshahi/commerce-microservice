@@ -1,0 +1,20 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: "order-service-db"
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: order-service
+      MYSQL_PASSWORD: password
+
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - "5432:5432"
